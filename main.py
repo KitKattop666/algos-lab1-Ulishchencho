@@ -11,7 +11,9 @@
 hint: что такое print?
 """
 
-# Замените это своим кодом
+
+# print("Hello world")
+
 
 """
  _____         _      _____ 
@@ -27,7 +29,18 @@ hint: что такое print?
 hint: цикл, если и "%"
 """
 
-# Замените это своим кодом
+
+# n = int(input("Введите число: "))
+# for i in range(1, n + 1):
+#     if i % 3 == 0 and i % 5 == 0:
+#         print("FizzBuzz")
+#     elif i % 3 == 0:
+#         print("Fizz")
+#     elif i % 5 == 0:
+#         print("Buzz")
+#     else:
+#         print(i)
+
 
 """
  _____         _      _____ 
@@ -42,7 +55,13 @@ hint: цикл, если и "%"
 hint: https://ru.wikihow.com/%D0%B2%D1%8B%D1%81%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%BE%D1%81%D0%BD%D1%8B%D0%B5-%D0%B3%D0%BE%D0%B4%D1%8B
 """
 
-# Замените это своим кодом
+
+# year = int(input("Введите год: "))
+# if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+#     print("Год високосный")
+# else:
+#     print("Год не високосный")
+
 
 """
  _____         _        ___ 
@@ -57,7 +76,12 @@ hint: https://ru.wikihow.com/%D0%B2%D1%8B%D1%81%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0
 hint: https://letpy.com/handbook/builtins/reversed/
 """
 
-# Замените это своим кодом
+
+# s = input("Введите строку или число: ")
+# if s == s[::-1]:
+#     print("Это палиндром")
+# else:
+#     print("Это не палиндром")
 
 """
  _____         _      _____ 
@@ -72,7 +96,13 @@ hint: https://letpy.com/handbook/builtins/reversed/
 hint: https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB
 """
 
-# Замените это своим кодом
+
+# n = int(input("Введите число: "))
+# factorial = 1
+# for i in range(1, n + 1):
+#     factorial *= i
+# print(f"Факториал {n} = {factorial}")
+
 
 """
  _____         _       ____ 
@@ -88,7 +118,23 @@ hint: x <= 1 - не простые числа
 hint 2: %
 """
 
-# Замените это своим кодом
+
+# n = int(input("Введите число: "))
+# is_prime = True
+
+# if n < 2:
+#     is_prime = False
+# else:
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             is_prime = False
+#             break
+
+# if is_prime:
+#     print(f"{n} является простым числом")
+# else:
+#     print(f"{n} не является простым числом")
+
 
 """
  _____         _      ______
@@ -103,7 +149,11 @@ hint 2: %
 hint: циклы
 """
 
-# Замените это своим кодом
+
+# n = input("Введите число: ")
+# sum_of_digits = sum(int(digit) for digit in n)
+# print(f"Сумма цифр числа {n} = {sum_of_digits}")
+
 
 """
  _____         _      _____ 
@@ -119,7 +169,30 @@ hint: 1, 1, 2, 3 https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D
 hint 2: попробуйте решить с помощью рекурсии
 """
 
-# Замените это своим кодом
+
+# n = int(input("Введите количество элементов Фибоначчи: "))
+# fib_sequence = [0, 1]
+# for i in range(2, n):
+#     fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+
+# print(f"Последовательность Фибоначчи: {fib_sequence[:n]}")
+
+
+def fibonacci_until(max_value, fib_sequence=None):
+    if fib_sequence is None:
+        fib_sequence = [1, 1]
+    else:
+        next_fib = fib_sequence[-1] + fib_sequence[-2]
+        if next_fib <= max_value:
+            fib_sequence.append(next_fib)
+        else:
+            return fib_sequence
+    
+    return fibonacci_until(max_value, fib_sequence)
+
+# Пример использования
+max_value = int(input("Введите максимальное значение для последовательности Фибоначчи: "))
+print(f"Последовательность Фибоначчи до {max_value}: {fibonacci_until(max_value)}")
 
 
 
